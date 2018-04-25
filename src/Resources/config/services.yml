@@ -1,0 +1,13 @@
+services:
+    locastic.sylius_ht_payway_plugin.form.type.mollie_gateway_configuration:
+        class: Locastic\SyliusHTPayWayPlugin\Form\Type\HTPayWayOffsiteGatewayConfigurationType
+        tags:
+            - { name: sylius.gateway_configuration_type, type: ht_payway_offsite, label: locastic.sylius_ht_payway_plugin.ui.ht_payway_offsite }
+            - { name: form.type }
+
+    locastic.sylius_ht_payway_plugin.direct_gateway_factory:
+        class: Payum\Core\Bridge\Symfony\Builder\GatewayFactoryBuilder
+        arguments:
+            - Locastic\SyliusHTPayWayPlugin\HTPayWayOffsiteGatewayFactory
+        tags:
+            - { name: payum.gateway_factory_builder, factory: ht_payway_offsite }
