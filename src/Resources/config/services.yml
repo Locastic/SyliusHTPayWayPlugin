@@ -11,3 +11,9 @@ services:
             - Locastic\SyliusHTPayWayPlugin\HTPayWayOffsiteGatewayFactory
         tags:
             - { name: payum.gateway_factory_builder, factory: ht_payway_offsite }
+
+    locastic.sylius_ht_payway_plugin.action.convert_payment_to_tcompayway:
+        class: Locastic\SyliusHTPayWayPlugin\Bridge\ConvertPaymentToHTPayWayAction
+        tags:
+#            - { name: payum.action, factory: ht_payway_direct, prepend: true }
+            - { name: payum.action, factory: ht_payway_offsite, prepend: true }
