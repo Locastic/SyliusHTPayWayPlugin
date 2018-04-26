@@ -1,0 +1,26 @@
+<form id="payway-authorize-form" name="payway-authorize-form" method="post"
+      action="{{ payment.apiEndPoint }}">
+    <input type="hidden" name="pgw_shop_id" value="{{ payment.pgwShopId }}"/>
+    <input type="hidden" name="pgw_order_id" value="{{ payment.pgwOrderId }}"/>
+    <input type="hidden" name="pgw_amount" value="{{ payment.pgwAmount }}"/>
+    <input type="hidden" name="pgw_authorization_type" value="{{ payment.pgwAuthorizationType }}"/>
+    <input type="hidden" name="pgw_authorization_token" value="{{ payment.pgwAuthorizationToken }}"/>
+    <input type="hidden" name="pgw_language" value="{{ payment.pgwLanguage }}"/>
+    <input type="hidden" name="pgw_return_method" value="{{ payment.pgwReturnMethod }}"/>
+    <input type="hidden" name="pgw_success_url" value="{{ payment.pgwSuccessUrl }}"/>
+    <input type="hidden" name="pgw_failure_url" value="{{ payment.pgwFailureUrl }}"/>
+    <input type="hidden" name="pgw_first_name" value="{{ payment.pgwFirstName }}"/>
+    <input type="hidden" name="pgw_last_name" value="{{ payment.pgwLastName }}"/>
+    <input type="hidden" name="pgw_street" value="{{ payment.pgwStreet }}"/>
+    <input type="hidden" name="pgw_city" value="{{ payment.pgwCity }}"/>
+    <input type="hidden" name="pgw_post_code" value="{{ payment.pgwPostCode }}"/>
+    <input type="hidden" name="pgw_country" value="{{ payment.pgwCountry }}"/>
+    <input type="hidden" name="pgw_telephone" value="{{ payment.pgwPhoneNumber }}"/>
+    <input type="hidden" name="pgw_email" value="{{ payment.pgwEmail }}"/>
+    <input type="hidden" name="pgw_merchant_data" value="{{ payment.pgwMerchantData }}"/>
+    <input type="hidden" name="pgw_order_info" value="{{ payment.pgwOrderInfo }}"/>
+    <input type="hidden" name="pgw_order_items" value="{{ payment.pgwOrderItems }}"/>
+    <input type="hidden" name="pgw_disable_installments" value="{{ payment.pgwDisableInstallments }}"/>
+    <input type="hidden" name="pgw_signature" value="{{ payment.pgwSignature }}"/>
+</form>
+<script> document.forms["payway-authorize-form"].submit(); </script>

@@ -20,7 +20,7 @@ final class HTPayWayOffsiteGatewayFactory extends GatewayFactory
     {
         $config->defaults(
             [
-                'payum.tcompayway.template.capture' => '@LocasticTcomPayWayOffsite/capture.html.twig',
+                'payum.tcompayway.template.capture' => '@LocasticSyliusHTPayWayPlugin/Offsite/capture.html.twig',
 
                 'payum.factory_name' => self::FACTORY_NAME,
                 'payum.factory_title' => 'HT PayWay Offsite',

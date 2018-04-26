@@ -7,6 +7,7 @@ use Payum\Core\Exception\RequestNotSupportedException;
 use Payum\Core\GatewayAwareInterface;
 use Payum\Core\GatewayAwareTrait;
 use Payum\Core\Request\Convert;
+use Sylius\Component\Core\Model\Order;
 use Sylius\Component\Payment\Model\PaymentInterface;
 
 class ConvertPaymentToHTPayWayAction implements ActionInterface, GatewayAwareInterface
@@ -24,6 +25,8 @@ class ConvertPaymentToHTPayWayAction implements ActionInterface, GatewayAwareInt
 
         /** @var PaymentInterface $payment */
         $payment = $request->getSource();
+
+        /** @var Order $order */
         $order = $payment->getOrder();
 
         if ($payment->getDetails()) {
@@ -44,7 +47,8 @@ class ConvertPaymentToHTPayWayAction implements ActionInterface, GatewayAwareInt
             $details['pgwCountry'] = $order->getBillingAddress()->getCountryCode();
         }
         $details['pgwPhoneNumber'] = $order->getBillingAddress()->getPhoneNumber();
-        $details['pgwEmail'] = $order->getUser()->getEmail();
+
+        $details['pgwEmail'] = $order->getCustomer()->getEmail();
 
         $request->setResult($details);
     }
