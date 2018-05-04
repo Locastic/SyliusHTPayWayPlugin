@@ -1,0 +1,27 @@
+services:
+    locastic.sylius_ht_pay_way_plugin.behat.ht_pay_way_offline_mocker:
+        class: Tests\Locastic\SyliusHTPayWayPlugin\Behat\Mocker\HTPayWayOffsiteMocker
+        arguments:
+            - "@sylius.behat.mocker"
+
+    locastic.sylius_ht_pay_way_plugin.behat.context.setup.ht_pay_way_offsite:
+        class: Tests\Locastic\SyliusHTPayWayPlugin\Behat\Context\Setup\HTPayWayOffsiteContext
+        arguments:
+            - "@sylius.behat.shared_storage"
+            - "@__symfony__.sylius.repository.payment_method"
+            - "@__symfony__.sylius.fixture.example_factory.payment_method"
+            - "@__symfony__.sylius.factory.payment_method_translation"
+            - "@__symfony__.sylius.manager.payment_method"
+        tags:
+            - { name: fob.context_service }
+
+
+    locastic.sylius_ht_pay_way_plugin.behat.context.ui.shop.checkout:
+        class: Tests\Locastic\SyliusHTPayWayPlugin\Behat\Context\Ui\Shop\CheckoutContext
+        arguments:
+#              - "@bitbag_sylius_mollie_plugin.page.shop.checkout.complete"
+#              - "@sylius.behat.page.shop.order.show"
+            - "@locastic.sylius_ht_pay_way_plugin.behat.ht_pay_way_offline_mocker"
+            - "@sylius.behat.page.shop.checkout.complete"
+        tags:
+            - { name: fob.context_service }
