@@ -25,17 +25,8 @@ class CaptureOffsiteAction implements ActionInterface, GatewayAwareInterface, Ap
     use ApiAwareTrait;
     use GatewayAwareTrait;
 
-    /**
-     * @var string
-     */
-    protected $templateName;
-
-    /**
-     * @param string $templateName
-     */
-    public function __construct($templateName)
+    public function __construct()
     {
-        $this->templateName = $templateName;
         $this->apiClass = Api::class;
     }
 
@@ -80,7 +71,7 @@ class CaptureOffsiteAction implements ActionInterface, GatewayAwareInterface, Ap
         $this->api->setPgwOrderItems($model['pgwOrderItems']);
 
         $renderTemplate = new RenderTemplate(
-            $this->templateName, array(
+            '@LocasticSyliusHTPayWayPlugin/Offsite/capture.html.twig', array(
                 'payment' => $this->api,
             )
         );

@@ -30,6 +30,8 @@ class ConvertPaymentToHTPayWayAction implements ActionInterface, GatewayAwareInt
         $order = $payment->getOrder();
 
         if ($payment->getDetails()) {
+            $request->setResult($payment->getDetails());
+
             return;
         }
 

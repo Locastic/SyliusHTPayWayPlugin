@@ -1,19 +1,33 @@
 services:
-    locastic.sylius_ht_payway_plugin.form.type.mollie_gateway_configuration:
+    locastic.sylius_ht_payway_plugin.form.type.ht_payway_gateway_configuration:
         class: Locastic\SyliusHTPayWayPlugin\Form\Type\HTPayWayOffsiteGatewayConfigurationType
         tags:
             - { name: sylius.gateway_configuration_type, type: ht_payway_offsite, label: locastic.sylius_ht_payway_plugin.ui.ht_payway_offsite }
             - { name: form.type }
 
-    locastic.sylius_ht_payway_plugin.direct_gateway_factory:
+    locastic.sylius_ht_payway_plugin.offsite_gateway_factory:
         class: Payum\Core\Bridge\Symfony\Builder\GatewayFactoryBuilder
         arguments:
             - Locastic\SyliusHTPayWayPlugin\HTPayWayOffsiteGatewayFactory
         tags:
-            - { name: payum.gateway_factory_builder, factory: ht_payway_offsite }
+            - { name: payum.gateway_factory_builder, factory: ht_payway_offsite, prepend: true }
 
-    locastic.sylius_ht_payway_plugin.action.convert_payment_to_tcompayway:
+    locastic.sylius_ht_payway_plugin.action.convert_payment_to_htpayway:
         class: Locastic\SyliusHTPayWayPlugin\Bridge\ConvertPaymentToHTPayWayAction
         tags:
-#            - { name: payum.action, factory: ht_payway_direct, prepend: true }
             - { name: payum.action, factory: ht_payway_offsite, prepend: true }
+
+    locastic.sylius_ht_payway_plugin.action.capture_offsite:
+        class: Locastic\SyliusHTPayWayPlugin\Action\CaptureOffsiteAction
+        tags:
+            - { name: payum.action, factory: ht_payway_offsite, alias: payum.action.capture }
+
+    locastic.sylius_ht_payway_plugin.action.status:
+        class: Locastic\SyliusHTPayWayPlugin\Action\StatusAction
+        tags:
+            - { name: payum.action, factory: ht_payway_offsite, alias: payum.action.status }
+
+    locastic.sylius_ht_payway_plugin.action.convert_payment:
+        class: Locastic\SyliusHTPayWayPlugin\Action\ConvertPaymentAction
+        tags:
+            - { name: payum.action, factory: ht_payway_offsite, alias: payum.action.convert_payment }

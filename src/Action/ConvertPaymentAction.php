@@ -26,7 +26,7 @@ class ConvertPaymentAction implements ActionInterface
         $details['pgwAmount'] = $payment->getTotalAmount();
         $details['pgwEmail'] = $payment->getClientEmail();
 
-        $request->setResult((array)$details);
+        $request->setResult($details);
     }
 
     /**
