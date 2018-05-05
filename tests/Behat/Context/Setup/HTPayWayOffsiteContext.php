@@ -69,7 +69,6 @@ final class HTPayWayOffsiteContext implements Context
         bool $addForCurrentChannel = true,
         int $position = null
     ): PaymentMethodInterface {
-
         /** @var PaymentMethodInterface $paymentMethod */
         $paymentMethod = $this->paymentMethodExampleFactory->create(
             [
@@ -84,6 +83,7 @@ final class HTPayWayOffsiteContext implements Context
                     )) ? [$this->sharedStorage->get('channel')] : [],
             ]
         );
+
         if (null !== $position) {
             $paymentMethod->setPosition($position);
         }

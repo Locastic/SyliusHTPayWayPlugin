@@ -43,4 +43,4 @@ default:
 
                 - locastic.sylius_ht_pay_way_plugin.behat.context.ui.shop.checkout
             filters:
-                tags: "@paying_with_ht_payway_offsite_for_order && @ui && @javascript"
+                tags: "@paying_with_ht_payway_offsite_for_order && @ui"
