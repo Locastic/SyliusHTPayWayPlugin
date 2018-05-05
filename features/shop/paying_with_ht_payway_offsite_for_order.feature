@@ -1,8 +1,8 @@
 @paying_with_ht_payway_offsite_for_order
-Feature: Paying with Mollie during checkout
+Feature: Paying with HT PayWay Offsite during checkout
     In order to buy products
     As a Customer
-    I want to be able to pay with Mollie
+    I want to be able to pay with HT PayWay Offsite
 
     Background:
         Given the store operates on a single channel in "United States"
@@ -17,5 +17,5 @@ Feature: Paying with Mollie during checkout
         Given I added product "PHP T-Shirt" to the cart
         And I have proceeded selecting "HT PayWay Offsite" payment method
         When I confirm my order with HT PayWay Offsite payment
-#        And I sign in to HT PayWay Offsite and pay successfully
+#        And I payed successfully in to HT PayWay Offsite gateway
 #        Then I should be notified that my payment has been completed
