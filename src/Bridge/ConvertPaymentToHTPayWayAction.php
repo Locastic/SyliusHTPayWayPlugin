@@ -8,7 +8,7 @@ use Payum\Core\GatewayAwareInterface;
 use Payum\Core\GatewayAwareTrait;
 use Payum\Core\Request\Convert;
 use Sylius\Component\Core\Model\Order;
-use Sylius\Component\Payment\Model\PaymentInterface;
+use Sylius\Component\Core\Model\PaymentInterface;
 
 class ConvertPaymentToHTPayWayAction implements ActionInterface, GatewayAwareInterface
 {
@@ -39,18 +39,31 @@ class ConvertPaymentToHTPayWayAction implements ActionInterface, GatewayAwareInt
 
         $details['pgwOrderId'] = $order->getNumber();
         $details['pgwAmount'] = $order->getTotal();
-//        $details['pgwLanguage'] = $order->getUser()->getLocale();
-        $details['pgwFirstName'] = $order->getBillingAddress()->getFirstName();
-        $details['pgwLastName'] = $order->getBillingAddress()->getLastName();
-        $details['pgwStreet'] = $order->getBillingAddress()->getStreet();
-        $details['pgwCity'] = $order->getBillingAddress()->getCity();
-        $details['pgwPostCode'] = $order->getBillingAddress()->getPostCode();
-        if ($order->getBillingAddress()->getCountryCode()) {
-            $details['pgwCountry'] = $order->getBillingAddress()->getCountryCode();
-        }
-        $details['pgwPhoneNumber'] = $order->getBillingAddress()->getPhoneNumber();
 
-        $details['pgwEmail'] = $order->getCustomer()->getEmail();
+        $customer = $order->getCustomer();
+
+        if ($customer) {
+            $details['pgwEmail'] = $customer->getEmail();
+        }
+
+//        $details['pgwLanguage'] = $order->getUser()->getLocale();
+
+        $billingAddress = $order->getBillingAddress();
+
+        if (null !== $billingAddress) {
+            $details['pgwFirstName'] = $billingAddress->getFirstName();
+            $details['pgwLastName'] = $billingAddress->getLastName();
+            $details['pgwStreet'] = $billingAddress->getStreet();
+            $details['pgwCity'] = $billingAddress->getCity();
+            $details['pgwPostCode'] = $billingAddress->getPostcode();
+
+            if ($billingAddress->getCountryCode()) {
+                $details['pgwCountry'] = $billingAddress->getCountryCode();
+            }
+
+            $details['pgwPhoneNumber'] = $billingAddress->getPhoneNumber();
+        }
+
 
         $request->setResult($details);
     }
