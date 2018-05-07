@@ -7,7 +7,7 @@
         <img src="https://img.shields.io/packagist/l/locastic/sylius-ht-payway-plugin.svg" />
     </a>
     <a href="https://packagist.org/packages/locastic/sylius-ht-payway-plugin" title="Version" target="_blank">
-        <img src="https://img.shields.io/packagist/v/locastic/sylius-ht-payway-plugin.svg" />
+        <img src="https://img.shields.io/packagist/v/Locastic/sylius-ht-payway-plugin.svg" />
     </a>
     <a href="https://travis-ci.org/Locastic/SyliusHTPayWayPlugin" title="Build status" target="_blank">
         <img src="https://img.shields.io/travis/Locastic/SyliusHTPayWayPlugin/master.svg" />
