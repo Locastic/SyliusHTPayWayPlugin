@@ -10,7 +10,7 @@
         <img src="https://img.shields.io/packagist/v/locastic/sylius-ht-payway-plugin.svg" />
     </a>
     <a href="https://travis-ci.org/Locastic/SyliusHTPayWayPlugin" title="Build status" target="_blank">
-        <img src="https://img.shields.io/travis/locastic/SyliusHTPayWayPlugin/master.svg" />
+        <img src="https://img.shields.io/travis/Locastic/SyliusHTPayWayPlugin/master.svg" />
     </a>
     <a href="https://scrutinizer-ci.com/g/Locastic/SyliusHTPayWayPlugin/" title="Scrutinizer" target="_blank">
         <img src="https://img.shields.io/scrutinizer/g/Locastic/SyliusHTPayWayPlugin.svg" />
