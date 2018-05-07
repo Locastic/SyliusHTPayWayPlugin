@@ -42,7 +42,7 @@ class ConvertPaymentToHTPayWayAction implements ActionInterface, GatewayAwareInt
 
         $customer = $order->getCustomer();
 
-        if ($customer) {
+        if (null !== $customer) {
             $details['pgwEmail'] = $customer->getEmail();
         }
 

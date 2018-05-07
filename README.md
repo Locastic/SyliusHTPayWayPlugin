@@ -12,8 +12,8 @@
     <a href="https://travis-ci.org/locastic/SyliusHTPayWayPlugin" title="Build status" target="_blank">
         <img src="https://img.shields.io/travis/locastic/SyliusHTPayWayPlugin/master.svg" />
     </a>
-    <a href="https://scrutinizer-ci.com/g/BitBagCommerce/SyliusCmsPlugin/" title="Scrutinizer" target="_blank">
-        <img src="https://img.shields.io/scrutinizer/g/BitBagCommerce/SyliusCmsPlugin.svg" />
+    <a href="https://scrutinizer-ci.com/g/Locastic/SyliusHTPayWayPlugin/" title="Scrutinizer" target="_blank">
+        <img src="https://img.shields.io/scrutinizer/g/Locastic/SyliusHTPayWayPlugin.svg" />
     </a>
     <a href="https://packagist.org/packages/locastic/sylius-ht-payway-plugin" title="Total Downloads" target="_blank">
         <img src="https://poser.pugx.org/locastic/sylius-ht-payway-plugin/downloads" />
