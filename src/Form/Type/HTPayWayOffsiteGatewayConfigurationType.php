@@ -23,8 +23,8 @@ final class HTPayWayOffsiteGatewayConfigurationType extends AbstractType
                 ChoiceType::class,
                 [
                     'choices' => [
-                        'locastic.sylius_ht_payway_plugin.form.no' => 0,
                         'locastic.sylius_ht_payway_plugin.form.yes' => 1,
+                        'locastic.sylius_ht_payway_plugin.form.no' => 0,
                     ],
                     'label' => 'locastic.sylius_ht_payway_plugin.form.sandbox',
                 ]
@@ -64,8 +64,8 @@ final class HTPayWayOffsiteGatewayConfigurationType extends AbstractType
                 ChoiceType::class,
                 [
                     'choices' => [
-                        'locastic.sylius_ht_payway_plugin.form.no' => 1,
                         'locastic.sylius_ht_payway_plugin.form.yes' => 0,
+                        'locastic.sylius_ht_payway_plugin.form.no' => 1,
                     ],
                     'label' => 'locastic.sylius_ht_payway_plugin.form.authorization_type',
                 ]
@@ -75,8 +75,8 @@ final class HTPayWayOffsiteGatewayConfigurationType extends AbstractType
                 ChoiceType::class,
                 [
                     'choices' => [
-                        'locastic.sylius_ht_payway_plugin.form.no' => 0,
                         'locastic.sylius_ht_payway_plugin.form.yes' => 1,
+                        'locastic.sylius_ht_payway_plugin.form.no' => 0,
                     ],
                     'label' => 'locastic.sylius_ht_payway_plugin.form.disable_installments',
                 ]

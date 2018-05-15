@@ -1,12 +1,12 @@
 locastic:
     sylius_ht_payway_plugin:
+        ui:
+            ht_payway_offsite: HT Offsite (form) payment
         form:
             yes: Yes
             no: No
             sandbox: Sandbox
             shop_id: Shop ID
-            shop_id_not_blank: Shop ID cannot be blank.
             secret_key: Secret Key
-            secret_key_not_blank: Secret key cannot be blank.
-            authorization_type: Pre authorization
+            authorization_type: Enable Pre authorization
             disable_installments: Disable installments

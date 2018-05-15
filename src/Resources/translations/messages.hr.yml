@@ -1,0 +1,12 @@
+locastic:
+    sylius_ht_payway_plugin:
+        ui:
+            ht_payway_offsite: HT Offsite (form) payment
+        form:
+            yes: Da
+            no: Ne
+            sandbox: Sandbox
+            shop_id: Shop ID
+            secret_key: Tajni kljul
+            authorization_type: Uključi predautorizaciju
+            disable_installments: Onemogući plaćanje na rate
