@@ -3,3 +3,5 @@ locastic:
         form:
             shop_id_not_blank: Shop ID cannot be blank
             secret_key_not_blank: Secret key cannot be blank
+        channel:
+            required_currency: The base currency of the channel must be HRK.

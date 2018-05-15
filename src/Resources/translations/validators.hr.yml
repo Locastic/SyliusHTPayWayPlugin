@@ -3,3 +3,5 @@ locastic:
         form:
             shop_id_not_blank: Shop ID ne može biti prazan
             secret_key_not_blank: Tajni ključ ne može biti prazan
+        channel:
+            required_currency: Osnovna vrijednost mora biti u HRK.

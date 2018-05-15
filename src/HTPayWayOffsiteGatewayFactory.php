@@ -6,7 +6,7 @@ use Payum\Core\GatewayFactory;
 use Payum\Core\Bridge\Spl\ArrayObject;
 use Locastic\TcomPayWay\AuthorizeForm\Model\Payment as PaymentOffsite;
 
-final class HTPayWayOffsiteGatewayFactory extends GatewayFactory
+final class HTPayWayOffsiteGatewayFactory extends GatewayFactory implements HTPayWayFactoryInterface
 {
     const FACTORY_NAME = 'ht_payway_offsite';
 

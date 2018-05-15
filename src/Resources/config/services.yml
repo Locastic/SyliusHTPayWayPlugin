@@ -1,4 +1,9 @@
 services:
+    locastic.sylius_ht_payway_plugin.validator.currency:
+        class: Locastic\SyliusHTPayWayPlugin\Validator\Constraints\CurrencyValidator
+        tags:
+            - { name: validator.constraint_validator, alias: locastic_sylius_ht_payway_plugin_currency }
+
     locastic.sylius_ht_payway_plugin.form.type.ht_payway_gateway_configuration:
         class: Locastic\SyliusHTPayWayPlugin\Form\Type\HTPayWayOffsiteGatewayConfigurationType
         tags:

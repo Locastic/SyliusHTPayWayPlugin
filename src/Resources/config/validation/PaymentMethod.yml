@@ -1,0 +1,5 @@
+Sylius\Component\Core\Model\PaymentMethod:
+    constraints:
+        - Locastic\SyliusHTPayWayPlugin\Validator\Constraints\Currency:
+            groups: ['sylius']
+            message: 'locastic.sylius_ht_payway_plugin.channel.required_currency'
