@@ -20,7 +20,6 @@
     </a>
     <br/>
     <br/>
-    <br/>
     <p align="center"><img src="https://sylius.com/assets/badge-approved-by-sylius.png" width="200"></p>
 </h1>
 
