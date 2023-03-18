@@ -14,8 +14,7 @@
         }
     ],
     "require": {
-        "php": "^7.1",
-
+        "php": "^7.1|^8.0",
         "sylius/sylius": "^1.1",
         "locastic/tcompayway": "^2.0"
     },
